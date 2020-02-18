@@ -1,5 +1,12 @@
-#wheel-container {
+#main-container {
   background-color: rgb(185, 185, 185);
+  position: relative;
+  margin: 150px auto 0px;
+  height: 300px;
+  width: 400px;
+}
+#wheel-container {
+  background-color: white;
   position: relative;
   margin: 150px auto 0px;
   height: 300px;
@@ -7,11 +14,51 @@
   border-radius: 150px;
 }
 #center-btn {
-  background-color: black;
+  background-color: rgb(185, 185, 185);
   height: 120px;
   width: 120px;
   border-radius: 150px;
   position: absolute;
-  left: 91px;
+  left: 90px;
   top: 91px;
+}
+
+#menu {
+  position: absolute;
+  color: rgb(185, 185, 185);
+  top: 40px;
+  left: 116px;
+  font-size: 135%;
+  font-weight: bold;
+}
+#next {
+  /* background-color: black; */
+  position: absolute;
+  top: 137px;
+  left: 229px;
+}
+#nextImg {
+  width: 40px;
+}
+
+#play {
+  /* background-color: black; */
+  position: absolute;
+  top: 241px;
+  left: 127px;
+}
+
+#playImg {
+  width: 47px;
+}
+
+#prev {
+  /* background-color: black; */
+  position: absolute;
+  top: 139px;
+  left: 30px;
+}
+
+#prevImg {
+  width: 40px;
 }
