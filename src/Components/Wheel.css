@@ -1,16 +1,19 @@
 #main-container {
   background-color: rgb(185, 185, 185);
   position: relative;
-  margin: 150px auto 0px;
+  margin: auto;
   height: 300px;
   width: 400px;
 }
 #wheel-container {
   background-color: white;
-  margin: 150px auto 0px;
-  height: 300px;
-  width: 300px;
+  margin: auto;
+  height: 270px;
+  width: 270px;
   border-radius: 150px;
+  top: 17px;
+  position: absolute;
+  left: 63px;
 }
 #center-btn {
   background-color: rgb(185, 185, 185);
@@ -29,18 +32,15 @@
   left: 166px;
   font-size: 135%;
   font-weight: bold;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10+ and Edge */
-  user-select: none; /* Standard syntax */
+
+  user-select: none;
 }
 #next {
   /* background-color: black; */
   position: absolute;
   top: 142px;
   left: 277px;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10+ and Edge */
-  user-select: none; /* Standard syntax */
+  user-select: none;
 }
 #nextImg {
   width: 40px;
@@ -51,9 +51,8 @@
   position: absolute;
   top: 241px;
   left: 173px;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10+ and Edge */
-  user-select: none; /* Standard syntax */
+
+  user-select: none;
 }
 
 #playImg {
@@ -65,9 +64,8 @@
   position: absolute;
   top: 142px;
   left: 78px;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10+ and Edge */
-  user-select: none; /* Standard syntax */
+
+  user-select: none;
 }
 
 #prevImg {

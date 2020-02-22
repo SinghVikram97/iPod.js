@@ -9,12 +9,9 @@ import prev from "./prev.svg";
 export default class Wheel extends Component {
   wheelContainer = createRef();
   centerBtn = createRef();
+  mainContainer = createRef();
   componentDidMount() {
-    let wheelRegion = ZingTouch.Region(
-      this.wheelContainer.current,
-      true,
-      false
-    );
+    let wheelRegion = ZingTouch.Region(this.mainContainer.current, true, false);
     wheelRegion.bind(this.wheelContainer.current, "rotate", e => {
       console.log("Wheel");
     });
@@ -29,7 +26,7 @@ export default class Wheel extends Component {
 
   render() {
     return (
-      <div id="main-container">
+      <div id="main-container" ref={this.mainContainer}>
         <div id="wheel-container" ref={this.wheelContainer}></div>
         <a id="center-btn" ref={this.centerBtn} href="#/" draggable="false"></a>
         <div id="menu">MENU</div>

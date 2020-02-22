@@ -1,0 +1,17 @@
+li {
+  list-style-type: none;
+  padding: 10px;
+  text-align: left;
+  font-size: 110%;
+  font-family: "Quicksand";
+  font-weight: bold;
+}
+
+.active {
+  background-color: #3692d1;
+  color: white;
+}
+
+#active-icon {
+  color: white;
+}
