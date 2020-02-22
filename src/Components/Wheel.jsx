@@ -7,32 +7,40 @@ import play from "./play.svg";
 import prev from "./prev.svg";
 
 export default class Wheel extends Component {
-  nextBtn = createRef();
-  playBtn = createRef();
-  prevBtn = createRef();
-
+  wheelContainer = createRef();
+  centerBtn = createRef();
   componentDidMount() {
-    let nextRegion = ZingTouch.Region(this.nextBtn.current);
-    nextRegion.bind(this.nextBtn.current, "pan", e => {
-      console.log("next-btn");
+    let wheelRegion = ZingTouch.Region(
+      this.wheelContainer.current,
+      true,
+      false
+    );
+    wheelRegion.bind(this.wheelContainer.current, "rotate", e => {
+      console.log("Wheel");
     });
+    let centerRegion = ZingTouch.Region(this.centerBtn.current);
+
+    centerRegion.bind(this.centerBtn.current, "tap", e => {
+      console.log("Center");
+    });
+
+    centerRegion.bind(this.centerBtn.current, "rotate", () => {});
   }
 
   render() {
     return (
       <div id="main-container">
-        <div id="wheel-container">
-          <div id="center-btn"></div>
-          <div id="menu">MENU</div>
-          <div id="next" ref={this.nextBtn}>
-            <img src={next} id="nextImg" alt="next" />
-          </div>
-          <div id="play">
-            <img src={play} id="playImg" alt="play" />
-          </div>
-          <div id="prev">
-            <img src={prev} id="prevImg" alt="prev" />
-          </div>
+        <div id="wheel-container" ref={this.wheelContainer}></div>
+        <a id="center-btn" ref={this.centerBtn} href="#/" draggable="false"></a>
+        <div id="menu">MENU</div>
+        <div id="next">
+          <img src={next} id="nextImg" alt="next" draggable="false" />
+        </div>
+        <div id="play">
+          <img src={play} id="playImg" alt="play" draggable="false" />
+        </div>
+        <div id="prev">
+          <img src={prev} id="prevImg" alt="prev" draggable="false" />
         </div>
       </div>
     );

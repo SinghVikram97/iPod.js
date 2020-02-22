@@ -7,7 +7,6 @@
 }
 #wheel-container {
   background-color: white;
-  position: relative;
   margin: 150px auto 0px;
   height: 300px;
   width: 300px;
@@ -19,23 +18,29 @@
   width: 120px;
   border-radius: 150px;
   position: absolute;
-  left: 90px;
-  top: 91px;
+  left: 138px;
+  top: 93px;
 }
 
 #menu {
   position: absolute;
   color: rgb(185, 185, 185);
   top: 40px;
-  left: 116px;
+  left: 166px;
   font-size: 135%;
   font-weight: bold;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10+ and Edge */
+  user-select: none; /* Standard syntax */
 }
 #next {
   /* background-color: black; */
   position: absolute;
-  top: 137px;
-  left: 229px;
+  top: 142px;
+  left: 277px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10+ and Edge */
+  user-select: none; /* Standard syntax */
 }
 #nextImg {
   width: 40px;
@@ -45,7 +50,10 @@
   /* background-color: black; */
   position: absolute;
   top: 241px;
-  left: 127px;
+  left: 173px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10+ and Edge */
+  user-select: none; /* Standard syntax */
 }
 
 #playImg {
@@ -55,8 +63,11 @@
 #prev {
   /* background-color: black; */
   position: absolute;
-  top: 139px;
-  left: 30px;
+  top: 142px;
+  left: 78px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10+ and Edge */
+  user-select: none; /* Standard syntax */
 }
 
 #prevImg {
