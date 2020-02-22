@@ -7,21 +7,40 @@ import play from "./play.svg";
 import prev from "./prev.svg";
 
 export default class Wheel extends Component {
+  state = {
+    currentAngle: 0,
+    lastRoundAngle: 0
+  };
+
   wheelContainer = createRef();
   centerBtn = createRef();
   mainContainer = createRef();
   componentDidMount() {
     let wheelRegion = ZingTouch.Region(this.mainContainer.current, true, false);
     wheelRegion.bind(this.wheelContainer.current, "rotate", e => {
-      console.log("Wheel");
+      this.setState(
+        { currentAngle: this.state.currentAngle + e.detail.distanceFromLast },
+        () => {
+          // console.log(this.state.currentAngle);
+          let myAngle = this.state.currentAngle % 360;
+
+          if (Math.abs(myAngle - this.state.lastRoundAngle) >= 15) {
+            if (e.detail.distanceFromLast > 0) {
+              this.props.increaseActive();
+            } else {
+              this.props.decreaseActive();
+            }
+
+            this.setState({ lastRoundAngle: myAngle });
+          }
+        }
+      );
     });
     let centerRegion = ZingTouch.Region(this.centerBtn.current);
 
     centerRegion.bind(this.centerBtn.current, "tap", e => {
       console.log("Center");
     });
-
-    centerRegion.bind(this.centerBtn.current, "rotate", () => {});
   }
 
   render() {
