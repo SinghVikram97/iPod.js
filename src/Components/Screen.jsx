@@ -7,7 +7,7 @@ export default class Screen extends Component {
       <div id="screen-container">
         <div className="row">
           <div className="col s6">
-            <SideList />
+            <SideList active={this.props.active} />
           </div>
           <div className="col s6">Hi</div>
         </div>

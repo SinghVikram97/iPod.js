@@ -17,14 +17,15 @@ export default class Wheel extends Component {
   mainContainer = createRef();
   componentDidMount() {
     let wheelRegion = ZingTouch.Region(this.mainContainer.current, true, false);
-    wheelRegion.bind(this.wheelContainer.current, "rotate", e => {
+    let rotateEvent = new ZingTouch.Rotate({});
+    wheelRegion.bind(this.wheelContainer.current, rotateEvent, e => {
       this.setState(
         { currentAngle: this.state.currentAngle + e.detail.distanceFromLast },
         () => {
           // console.log(this.state.currentAngle);
           let myAngle = this.state.currentAngle % 360;
 
-          if (Math.abs(myAngle - this.state.lastRoundAngle) >= 15) {
+          if (Math.abs(myAngle - this.state.lastRoundAngle) >= 20) {
             if (e.detail.distanceFromLast > 0) {
               this.props.increaseActive();
             } else {
