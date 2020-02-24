@@ -40,7 +40,7 @@ export default class Wheel extends Component {
     let centerRegion = ZingTouch.Region(this.centerBtn.current);
 
     centerRegion.bind(this.centerBtn.current, "tap", e => {
-      console.log("Center");
+      this.props.handleWheelClick();
     });
   }
 
@@ -48,7 +48,7 @@ export default class Wheel extends Component {
     return (
       <div id="main-container" ref={this.mainContainer}>
         <div id="wheel-container" ref={this.wheelContainer}></div>
-        <a id="center-btn" ref={this.centerBtn} href="#/" draggable="false"></a>
+        <a id="center-btn" ref={this.centerBtn} draggable="false"></a>
         <div id="menu">MENU</div>
         <div id="next">
           <img src={next} id="nextImg" alt="next" draggable="false" />

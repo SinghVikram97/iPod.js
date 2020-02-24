@@ -15,3 +15,7 @@ li {
 #active-icon {
   color: white;
 }
+
+.capital {
+  text-transform: capitalize;
+}
