@@ -19,3 +19,7 @@ li {
 .capital {
   text-transform: capitalize;
 }
+
+.side-list-link {
+  color: black;
+}

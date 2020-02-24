@@ -5,6 +5,7 @@ import "./Wheel.css";
 import next from "./next.svg";
 import play from "./play.svg";
 import prev from "./prev.svg";
+import { Link } from "react-router-dom";
 
 export default class Wheel extends Component {
   state = {
@@ -49,7 +50,10 @@ export default class Wheel extends Component {
       <div id="main-container" ref={this.mainContainer}>
         <div id="wheel-container" ref={this.wheelContainer}></div>
         <a id="center-btn" ref={this.centerBtn} draggable="false"></a>
-        <div id="menu">MENU</div>
+        <Link to="/" id="menu-link" draggable="false">
+          <div id="menu">MENU</div>
+        </Link>
+
         <div id="next">
           <img src={next} id="nextImg" alt="next" draggable="false" />
         </div>

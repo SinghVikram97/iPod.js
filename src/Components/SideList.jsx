@@ -16,7 +16,11 @@ export default class SideList extends Component {
         {this.state.items.map((item, index) => {
           if (index === this.props.active) {
             return (
-              <Link to={item} ref={this.props.buttonRef}>
+              <Link
+                to={item}
+                ref={this.props.buttonRef}
+                className="side-list-link"
+              >
                 <li className="active capital" key={index}>
                   {item}
                   <i
@@ -30,7 +34,7 @@ export default class SideList extends Component {
             );
           } else {
             return (
-              <Link to={item}>
+              <Link to={item} className="side-list-link">
                 <li key={index} className="capital">
                   {item}
                 </li>

@@ -31,7 +31,7 @@ export default class App extends Component {
   };
   render() {
     return (
-      <div className="App">
+      <div className="App" id="main-app-container">
         <Screen active={this.state.active} ref={ref} />
         <Wheel
           increaseActive={this.increaseActive}

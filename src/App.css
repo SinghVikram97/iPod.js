@@ -1,5 +1,13 @@
 body {
-  background-color: black;
+  background-color: white;
+}
+
+#main-app-container {
+  background-color: #dbdbdb;
+  margin: 157px auto;
+  padding-top: 1px;
+  width: 400px;
+  border-radius: 50px;
 }
 
 .App {

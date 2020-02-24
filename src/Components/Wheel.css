@@ -1,5 +1,5 @@
 #main-container {
-  background-color: rgb(185, 185, 185);
+  /* background-color: rgb(185, 185, 185); */
   position: relative;
   margin: auto;
   height: 300px;
@@ -32,7 +32,11 @@
   left: 166px;
   font-size: 135%;
   font-weight: bold;
+  user-select: none;
+}
 
+#menu-link {
+  cursor: default;
   user-select: none;
 }
 #next {
