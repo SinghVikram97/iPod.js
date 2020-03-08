@@ -1,18 +1,18 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
 import "./Screen.css";
 import SideList from "./SideList";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, __RouterContext } from "react-router-dom";
 import HomePage from "./homePage";
 import Songs from "./Songs";
 
-const Screen = React.forwardRef((props, ref) => {
+const Screen = React.forwardRef((prop, ref) => {
   return (
     <div id="screen-container">
       <Switch>
         <Route
           exact
           path="/"
-          component={() => <HomePage active={props.active} buttonRef={ref} />}
+          component={() => <HomePage active={prop.active} buttonRef={ref} />}
         />
         <Route exact path="/songs" component={() => <Songs />} />
       </Switch>
