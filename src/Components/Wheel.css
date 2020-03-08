@@ -8,30 +8,31 @@
 #wheel-container {
   background-color: white;
   margin: auto;
-  height: 270px;
-  width: 270px;
+  height: 240px;
+  width: 240px;
   border-radius: 150px;
-  top: 17px;
+  top: 28px;
   position: absolute;
-  left: 63px;
+  left: 67px;
 }
 #center-btn {
   background-color: rgb(185, 185, 185);
-  height: 120px;
-  width: 120px;
+  height: 88px;
+  width: 88px;
   border-radius: 150px;
   position: absolute;
-  left: 138px;
-  top: 93px;
+  left: 146px;
+  top: 108px;
 }
 
 #menu {
   position: absolute;
   color: rgb(185, 185, 185);
-  top: 40px;
-  left: 166px;
+  top: 60px;
+  left: 161px;
   font-size: 135%;
   font-weight: bold;
+  -webkit-user-select: none;
   user-select: none;
 }
 
@@ -43,7 +44,8 @@
   /* background-color: black; */
   position: absolute;
   top: 142px;
-  left: 277px;
+  left: 248px;
+  /* -webkit-user-select: none; */
   user-select: none;
 }
 #nextImg {
@@ -53,9 +55,10 @@
 #play {
   /* background-color: black; */
   position: absolute;
-  top: 241px;
-  left: 173px;
+  top: 221px;
+  left: 165px;
 
+  /* -webkit-user-select: none; */
   user-select: none;
 }
 
@@ -64,11 +67,11 @@
 }
 
 #prev {
-  /* background-color: black; */
+  /* background-color: black;  */
   position: absolute;
   top: 142px;
-  left: 78px;
-
+  left: 90px;
+  /* -webkit-user-select: none; */
   user-select: none;
 }
 
