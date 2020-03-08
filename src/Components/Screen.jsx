@@ -14,7 +14,11 @@ const Screen = React.forwardRef((prop, ref) => {
           path="/"
           component={() => <HomePage active={prop.active} buttonRef={ref} />}
         />
-        <Route exact path="/songs" component={() => <Songs />} />
+        <Route
+          exact
+          path="/songs"
+          component={() => <Songs active={prop.active} buttonRef={ref} />}
+        />
       </Switch>
     </div>
   );
