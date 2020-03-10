@@ -3,10 +3,12 @@ import "./SideList.css";
 import { Link } from "react-router-dom";
 export default class SideList extends Component {
   state = {
-    items: ["songs", "albums", "artists", "playlists"]
+    items: []
   };
+  componentDidMount() {
+    this.setState({ items: this.props.itemList });
+  }
   render() {
-    console.log(this.props.active);
     return (
       <ul>
         <li>

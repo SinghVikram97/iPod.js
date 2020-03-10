@@ -7,11 +7,16 @@ const ref = React.createRef();
 
 export default class App extends Component {
   state = {
-    active: 0
+    active: 0,
+    itemListSize: 4
+  };
+
+  setListSize = size => {
+    this.setState({ itemListSize: size });
   };
 
   increaseActive = () => {
-    if (this.state.active === 3) {
+    if (this.state.active === this.state.itemListSize - 1) {
       this.setState({ active: 0 });
     } else {
       this.setState({ active: this.state.active + 1 });
@@ -20,7 +25,7 @@ export default class App extends Component {
 
   decreaseActive = () => {
     if (this.state.active === 0) {
-      this.setState({ active: 3 });
+      this.setState({ active: this.state.itemListSize - 1 });
     } else {
       this.setState({ active: this.state.active - 1 });
     }
@@ -32,7 +37,11 @@ export default class App extends Component {
   render() {
     return (
       <div className="App" id="main-app-container">
-        <Screen active={this.state.active} ref={ref} />
+        <Screen
+          active={this.state.active}
+          ref={ref}
+          setListSize={this.setListSize}
+        />
         <Wheel
           increaseActive={this.increaseActive}
           decreaseActive={this.decreaseActive}

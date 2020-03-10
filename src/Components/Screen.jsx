@@ -12,22 +12,27 @@ const Screen = React.forwardRef((prop, ref) => {
         <Route
           exact
           path="/"
-          component={({ location }) => (
+          render={({ location }) => (
             <HomePage
               active={prop.active}
+              setListSize={prop.setListSize}
               buttonRef={ref}
               path={location.pathname}
+              itemList={["cover flow", "music", "games", "settings"]}
             />
           )}
         />
+        {/* Use render instead of component to prevent remounting in inline function */}
         <Route
           exact
-          path="/songs"
-          component={({ location }) => (
+          path="/music"
+          render={({ location }) => (
             <Songs
               active={prop.active}
+              setListSize={prop.setListSize}
               buttonRef={ref}
               path={location.pathname}
+              itemList={["artists", "albums"]}
             />
           )}
         />
