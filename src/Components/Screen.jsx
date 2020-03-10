@@ -12,12 +12,24 @@ const Screen = React.forwardRef((prop, ref) => {
         <Route
           exact
           path="/"
-          component={() => <HomePage active={prop.active} buttonRef={ref} />}
+          component={({ location }) => (
+            <HomePage
+              active={prop.active}
+              buttonRef={ref}
+              path={location.pathname}
+            />
+          )}
         />
         <Route
           exact
           path="/songs"
-          component={() => <Songs active={prop.active} buttonRef={ref} />}
+          component={({ location }) => (
+            <Songs
+              active={prop.active}
+              buttonRef={ref}
+              path={location.pathname}
+            />
+          )}
         />
       </Switch>
     </div>

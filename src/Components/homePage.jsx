@@ -3,6 +3,7 @@ import SideList from "./SideList";
 import bg from "./bg.jpeg";
 export default class HomePage extends Component {
   render() {
+    console.log(this.props.path);
     return (
       <div className="row">
         <div className="col s6" style={{}}>
