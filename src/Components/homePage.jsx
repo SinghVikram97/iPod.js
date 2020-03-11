@@ -15,6 +15,7 @@ export default class HomePage extends Component {
             active={this.props.active}
             buttonRef={this.props.buttonRef}
             itemList={this.props.itemList}
+            heading={this.props.heading}
           />
         </div>
         <div

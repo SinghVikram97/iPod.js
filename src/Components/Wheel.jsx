@@ -5,9 +5,9 @@ import "./Wheel.css";
 import next from "./next.svg";
 import play from "./play.svg";
 import prev from "./prev.svg";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
-export default class Wheel extends Component {
+class Wheel extends Component {
   state = {
     currentAngle: 0,
     lastRoundAngle: 0
@@ -47,10 +47,15 @@ export default class Wheel extends Component {
 
   render() {
     return (
-      <div id="main-container" ref={this.mainContainer}>
+      <div id="main-container" ref={this.mainContainer} draggable="false">
         <div id="wheel-container" ref={this.wheelContainer}></div>
         <a id="center-btn" ref={this.centerBtn} draggable="false"></a>
-        <Link to="/" id="menu-link" draggable="false">
+        <Link
+          to="/"
+          id="menu-link"
+          draggable="false"
+          onClick={() => this.props.history.go(-1)}
+        >
           <div id="menu">MENU</div>
         </Link>
 
@@ -67,3 +72,5 @@ export default class Wheel extends Component {
     );
   }
 }
+
+export default withRouter(Wheel);

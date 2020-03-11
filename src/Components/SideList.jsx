@@ -12,7 +12,7 @@ export default class SideList extends Component {
     return (
       <ul>
         <li>
-          <h5>iPod.js</h5>
+          <h5>{this.props.heading}</h5>
         </li>
 
         {this.state.items.map((item, index) => {

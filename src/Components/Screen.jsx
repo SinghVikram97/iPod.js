@@ -4,6 +4,7 @@ import SideList from "./SideList";
 import { Switch, Route, __RouterContext } from "react-router-dom";
 import HomePage from "./homePage";
 import Songs from "./Songs";
+import AllSongs from "./AllSongs";
 
 const Screen = React.forwardRef((prop, ref) => {
   return (
@@ -19,6 +20,7 @@ const Screen = React.forwardRef((prop, ref) => {
               buttonRef={ref}
               path={location.pathname}
               itemList={["cover flow", "music", "games", "settings"]}
+              heading="iPod.js"
             />
           )}
         />
@@ -32,10 +34,12 @@ const Screen = React.forwardRef((prop, ref) => {
               setListSize={prop.setListSize}
               buttonRef={ref}
               path={location.pathname}
-              itemList={["artists", "albums"]}
+              itemList={["all songs", "artists", "albums"]}
+              heading="Music"
             />
           )}
         />
+        <Route path="/all*" render={({ location }) => <AllSongs />} />
       </Switch>
     </div>
   );

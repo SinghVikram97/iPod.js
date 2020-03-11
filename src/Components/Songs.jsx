@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SideList from "./SideList";
 export default class Songs extends Component {
   componentDidMount() {
-    this.props.setListSize(2);
+    this.props.setListSize(3);
   }
 
   render() {
@@ -14,6 +14,7 @@ export default class Songs extends Component {
             active={this.props.active}
             buttonRef={this.props.buttonRef}
             itemList={this.props.itemList}
+            heading={this.props.heading}
           />
         </div>
         <div className="col s6">Songs</div>
