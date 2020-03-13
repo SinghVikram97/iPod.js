@@ -17,6 +17,8 @@ class Wheel extends Component {
   centerBtn = createRef();
   mainContainer = createRef();
   componentDidMount() {
+    let player = document.getElementById("player");
+    console.log(player);
     let wheelRegion = ZingTouch.Region(this.mainContainer.current, true, false);
     let rotateEvent = new ZingTouch.Rotate({});
     wheelRegion.bind(this.wheelContainer.current, rotateEvent, e => {
@@ -58,18 +60,20 @@ class Wheel extends Component {
           to="/"
           id="menu-link"
           draggable="false"
-          onClick={() => this.props.history.go(-1)}
+          onClick={() => {
+            if (this.props.location.pathname != "/") this.props.history.go(-1);
+          }}
         >
           <div id="menu">MENU</div>
         </Link>
 
-        <div id="next">
+        <div id="next" draggable="false">
           <img src={next} id="nextImg" alt="next" draggable="false" />
         </div>
-        <div id="play">
+        <div draggable="false" id="play" onClick={this.props.handlePlayPause}>
           <img src={play} id="playImg" alt="play" draggable="false" />
         </div>
-        <div id="prev">
+        <div draggable="false" id="prev">
           <img src={prev} id="prevImg" alt="prev" draggable="false" />
         </div>
       </div>

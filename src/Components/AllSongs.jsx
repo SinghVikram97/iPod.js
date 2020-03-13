@@ -86,6 +86,7 @@ export default class AllSongs extends Component {
                     autoPlay={true}
                     id="player"
                     onTimeUpdate={this.handleTimeUpdate}
+                    ref={this.props.playerRef}
                   >
                     <source src={audioSrc} type="audio/mp3" />
                   </audio>

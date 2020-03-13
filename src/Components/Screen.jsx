@@ -17,7 +17,7 @@ const Screen = React.forwardRef((prop, ref) => {
             <HomePage
               active={prop.active}
               setListSize={prop.setListSize}
-              buttonRef={ref}
+              buttonRef={ref[0]}
               path={location.pathname}
               itemList={["cover flow", "music", "games", "settings"]}
               heading="iPod.js"
@@ -32,14 +32,17 @@ const Screen = React.forwardRef((prop, ref) => {
             <Songs
               active={prop.active}
               setListSize={prop.setListSize}
-              buttonRef={ref}
+              buttonRef={ref[0]}
               path={location.pathname}
               itemList={["all songs", "artists", "albums"]}
               heading="Music"
             />
           )}
         />
-        <Route path="/all*" render={({ location }) => <AllSongs />} />
+        <Route
+          path="/all*"
+          render={({ location }) => <AllSongs playerRef={ref[1]} />}
+        />
       </Switch>
     </div>
   );

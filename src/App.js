@@ -3,7 +3,10 @@ import "./App.css";
 import Wheel from "./Components/Wheel";
 import Screen from "./Components/Screen";
 
-const ref = React.createRef();
+const activeRef = React.createRef();
+const playerRef = React.createRef();
+
+const ref = [activeRef, playerRef];
 
 export default class App extends Component {
   state = {
@@ -32,8 +35,17 @@ export default class App extends Component {
   };
 
   handleWheelClick = () => {
-    console.log(ref.current.click());
+    activeRef.current.click();
   };
+
+  handlePlayPause = () => {
+    if (playerRef.current.paused) {
+      playerRef.current.play();
+    } else {
+      playerRef.current.pause();
+    }
+  };
+
   render() {
     return (
       <div className="App" id="main-app-container">
@@ -46,6 +58,7 @@ export default class App extends Component {
           increaseActive={this.increaseActive}
           decreaseActive={this.decreaseActive}
           handleWheelClick={this.handleWheelClick}
+          handlePlayPause={this.handlePlayPause}
         />
       </div>
     );
