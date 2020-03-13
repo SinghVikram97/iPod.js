@@ -1,0 +1,20 @@
+#audio-progress {
+  width: 90%;
+}
+#audio-progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: white !important;
+  color: #1ca5e8;
+  height: 10px;
+}
+
+#audio-progress[value]::-webkit-progress-bar {
+  background-color: lightgray;
+  border-radius: 2px;
+  border: 1px solid lighten(#acacac, 20%);
+  color: #1ca5e8;
+}
+#audio-progress::-webkit-progress-value {
+  background-color: #1ca5e8;
+}

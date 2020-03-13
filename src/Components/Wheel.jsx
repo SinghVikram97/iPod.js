@@ -48,7 +48,11 @@ class Wheel extends Component {
   render() {
     return (
       <div id="main-container" ref={this.mainContainer} draggable="false">
-        <div id="wheel-container" ref={this.wheelContainer}></div>
+        <div
+          id="wheel-container"
+          ref={this.wheelContainer}
+          draggable="false"
+        ></div>
         <a id="center-btn" ref={this.centerBtn} draggable="false"></a>
         <Link
           to="/"
