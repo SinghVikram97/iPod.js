@@ -5,6 +5,7 @@ import { Switch, Route, __RouterContext } from "react-router-dom";
 import HomePage from "./homePage";
 import Songs from "./Songs";
 import AllSongs from "./AllSongs";
+import Games from "./Games";
 
 const Screen = React.forwardRef((prop, ref) => {
   return (
@@ -39,10 +40,13 @@ const Screen = React.forwardRef((prop, ref) => {
             />
           )}
         />
+        {/* All Songs */}
         <Route
           path="/all*"
           render={({ location }) => <AllSongs playerRef={ref[1]} />}
         />
+        {/* Games */}
+        <Route path="/games" render={() => <Games />} />
       </Switch>
     </div>
   );
