@@ -6,6 +6,8 @@ import HomePage from "./homePage";
 import Songs from "./Songs";
 import AllSongs from "./AllSongs";
 import Games from "./Games";
+import Settings from "./Settings";
+import Coverflow from "./Coverflow";
 
 const Screen = React.forwardRef((prop, ref) => {
   return (
@@ -47,6 +49,8 @@ const Screen = React.forwardRef((prop, ref) => {
         />
         {/* Games */}
         <Route path="/games" render={() => <Games />} />
+        <Route path="/settings" render={() => <Settings />} />
+        <Route path="/cover*" render={() => <Coverflow />} />
       </Switch>
     </div>
   );
