@@ -48,7 +48,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="App" id="main-app-container">
+      <div className="App" id="main-app-container" draggable="false">
         <Screen
           active={this.state.active}
           ref={ref}
